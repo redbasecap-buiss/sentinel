@@ -1,0 +1,42 @@
+## Sentinel — Default Detection Rules
+
+[[rule]]
+id = "SID-1001"
+name = "TCP SYN scan detected"
+severity = "high"
+category = "scan"
+protocol = "tcp"
+tcp_flags = "S"
+
+[[rule]]
+id = "SID-1002"
+name = "DNS zone transfer attempt"
+severity = "medium"
+category = "policy"
+protocol = "tcp"
+dst_port = 53
+content = "AXFR"
+
+[[rule]]
+id = "SID-1003"
+name = "HTTP shellshock exploit"
+severity = "critical"
+category = "exploit"
+protocol = "tcp"
+dst_port = 80
+content = "() {"
+
+[[rule]]
+id = "SID-1004"
+name = "Telnet access attempt"
+severity = "medium"
+category = "policy"
+protocol = "tcp"
+dst_port = 23
+
+[[rule]]
+id = "SID-1005"
+name = "ICMP ping sweep"
+severity = "low"
+category = "scan"
+protocol = "icmp"
